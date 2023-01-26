@@ -3,8 +3,8 @@ public class Recursion2 {
     private static int[] sorted = { 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22 };
 
     public static int binarySearch(int key, int left, int right) {
-        if (right == left)
-            return left;
+        if (right < left)
+            return -1; // if right and left cross and nothing is to be found
         else {
             int middle = (left + right) / 2;
 
@@ -26,6 +26,9 @@ public class Recursion2 {
         // System.out.println(maxByTail(0, intArray[0]));
         System.out.println(binarySearch(16, 0, sorted.length - 1));
     }
+
+
+        
 
     /**
      * This method recursively adds up the numbers in an array.
