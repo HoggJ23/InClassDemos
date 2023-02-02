@@ -22,11 +22,11 @@ public class FavoriteList extends ListADT<Favorite>{ // creating a Favortie list
     @Override 
     public void add (int index, Favorite item) { // getting the index of the added Item
         if((index < 0 || index > this.getSize()))// throwing the exception
-        throw new ListException("" + index + "index is invalid for list of size " + this.getSize());
+        throw new ListException("Index" + index + "index is invalid for list of size " + this.getSize());
 
 
         for(int i = this.getSize(); i < index; i--) // here the loop is strarting at the end of the array 
-            this.favorotes[i] = this.favorites[i- 1];// taking the index and subtracting it by one 
+            this.favorites[i] = this.favorites[i- 1];// taking the index and subtracting it by one 
 
             this.favorites[index] = item;
             this.numFavorites++;// adding more boxes the array 
@@ -40,14 +40,14 @@ public class FavoriteList extends ListADT<Favorite>{ // creating a Favortie list
 
         
         for(int i = index + 1; i < this.getSize(); i++)
-            this.favorotes[i - 1] = this.favorites[i];// taking the index and subtracting it by one 
+            this.favorites[i - 1] = this.favorites[i];// taking the index and subtracting it by one 
 
-            this.numFavorties--; // 
+            this.numFavorites--; // 
     }
 
     @Override 
     public void removeall() {
-        this.numFavorties = 0;
+        this.numFavorites = 0;
         this.favorites = new Favorite[MAX_FAVORITES];
     }
 
